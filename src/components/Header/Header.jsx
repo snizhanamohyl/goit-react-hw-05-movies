@@ -1,10 +1,10 @@
-import { StyledLink } from "./Header.styled";
+import { StyledLink, HeaderWrap } from "./Header.styled";
 
 export default function Header() {
-    return <div>
+    return <HeaderWrap>
         <StyledLink to="/" end>
           Home
         </StyledLink>
         <StyledLink to="/movies">Movies</StyledLink>
-    </div>
+    </HeaderWrap>
 }

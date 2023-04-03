@@ -1,16 +1,16 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-export const Details = styled.div`
-  display: flex;
-  align-items: center;
+export const BackBtn = styled(Link)`
+  padding: 8px 20px;
+  border-radius: 4px;
+  border: 1px solid #cfcfcf;
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+export const Wrap = styled.div`
   padding: 20px;
-  box-shadow: 4px 4px 8px #e8e8e8;
-`;
-
-export const Img = styled.img`
-  border-radius: 6px;
-`;
-
-export const Info = styled.div`
-  margin-left: 24px;
 `;

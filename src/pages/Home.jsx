@@ -1,22 +1,25 @@
 import MovieList from 'components/MovieList';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import {fetchTrendingMovies } from 'services/api';
 
 export default function Home() {
     const [movies, setMovies] = useState([]);
 
-    const getMovies = async() => {
-        const movies = await fetchTrendingMovies();
-
-        setMovies(movies);
+    const getMovies = async () => {
+        try {
+            const movies = await fetchTrendingMovies();
+            setMovies(movies);
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     useEffect(() => {
         getMovies();
     }, [])
     
-    return <div>
+    return <Suspense fallback={<h1>Loading...</h1>}>
         <h2>Trending today</h2>
         <MovieList movies={movies} />
-    </div>
+    </Suspense>
 }
