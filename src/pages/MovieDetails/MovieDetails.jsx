@@ -28,7 +28,6 @@ export default function MovieDetails() {
 
     return <>
         {movie && <Wrap>
-            { console.log(location.current.state)}
             <BackBtn to={location.current.state ? location.current.state : '/'}>Go Back</BackBtn>
             <MovieInfo movie={movie} />
             </Wrap>}
